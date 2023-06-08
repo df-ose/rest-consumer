@@ -73,8 +73,8 @@ public class Consumidor {
 	private String datasend;
 
 	private void configuracion1(Properties config) {
-
-        config.put("bootstrap.servers", broker1+":"+port1+","+broker2+":"+port2+","+broker3+":"+port3);
+        config.put("bootstrap.servers", "broker.ose.pe:9092");
+        //config.put("bootstrap.servers", broker1+":"+port1+","+broker2+":"+port2+","+broker3+":"+port3);
         config.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         config.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         //config.put("fetch.min.bytes", 1);
@@ -101,8 +101,8 @@ public class Consumidor {
 
 
 	private  void configuracion2(Properties config) {
-
-	    config.put("bootstrap.servers", broker1+":"+port1+","+broker2+":"+port2+","+broker3+":"+port3);
+            config.put("bootstrap.servers", "broker.ose.pe:9092");
+	    //config.put("bootstrap.servers", broker1+":"+port1+","+broker2+":"+port2+","+broker3+":"+port3);
 	    config.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
 	    config.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
 	    config.put("group.id",groupidclient);
@@ -113,8 +113,8 @@ public class Consumidor {
 
 
 	private  void configuracion3(Properties config) {
-
-	    config.put("bootstrap.servers", broker1+":"+port1+","+broker2+":"+port2+","+broker3+":"+port3);
+            config.put("bootstrap.servers", "broker.ose.pe:9092");
+	    //config.put("bootstrap.servers", broker1+":"+port1+","+broker2+":"+port2+","+broker3+":"+port3);
 	    config.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
 	    config.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
 	    config.put("group.id",groupidclient);
@@ -173,8 +173,8 @@ public class Consumidor {
 	       
 	       
 	       //topic="usuarios-topic" ;
-	       topic=topico1;
-	       
+	       //topic=topico1;
+	       topic="usuarios-topic"
 	       configuracion1(props1);
 
 		   KafkaConsumer<String, String> myConsumer1 = new KafkaConsumer<String, String>(props1);
